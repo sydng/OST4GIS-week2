@@ -30,6 +30,7 @@
 
       // Here's the variable we need to hold our count in:
       var exampleSum = 0; // To count of the strings
+      var exampleSum1 = 0;
 
       // A loop for summing the contents of theArray
       for (var i = 0; i < theArray.length; i++) {
@@ -53,7 +54,29 @@
       var yourSum = 0;
 
       // Refactor the work above into a few different functions that are reusable to the extent that you can
-      for (var i = 0; i < theArray.length, i++) { /* Do stuff here */ }
+      for (var i = 0; i < theArray.length; i++) {
+        var newValue = theArray[i];
+
+        function sumStrings () {
+          if (typeof newValue === 'string') {         // String case
+            return exampleSum = exampleSum + arrayValue.length
+          } else {
+            console.log("Not sure how to proceed with value:", arrayValue)
+          }
+        }
+
+        function sumNums () {
+          if (typeof newValue === 'number') {  // Number case
+            exampleSum1 = exampleSum1 + arrayValue
+          } else {                                      // Otherwise
+            console.log("Not sure how to proceed with value:", arrayValue)
+          }
+        }
+      }
+
+      yourSum = exampleSum + exampleSum1;
+
+      console.log(yourSum);
 
       /* =====================
 
