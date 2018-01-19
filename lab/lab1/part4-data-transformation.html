@@ -55,8 +55,10 @@
     var data = bikeArrayClean;
 
     for ( i = 0; i < bikeArrayClean.length; i++) {
-      console.log(bikeArrayClean[i]);
-    }
+        L.marker([bikeArrayClean[i][1], bikeArrayClean[i][0]]).addTo(map);
+      }
+
+      
 
     //for (i = 0; i < data.length; i++) {
         //console.log(data[i]);
