@@ -51,28 +51,19 @@
 
     ===================== */
 
-
-    var data = bikeArrayClean;
-
-    for ( i = 0; i < bikeArrayClean.length; i++) {
-        L.marker([bikeArrayClean[i][1], bikeArrayClean[i][0]]).addTo(map);
-      }
-
-      
-
-    //for (i = 0; i < data.length; i++) {
-        //console.log(data[i]);
-        //var dataFiltered = data[i][3] > 20;
-      //  console.log(dataFiltered);
-  //  }
-
     /* =====================
 
     Start code to filter data
 
     ===================== */
 
+    var dataFiltered = [];
 
+    for (i = 0; i < bikeArrayClean.length; i++) {
+           if (bikeArrayClean[i][3] > 20) {
+              dataFiltered = dataFiltered.concat([bikeArrayClean[i]]);
+            } else { }
+          }
 
     /* =====================
 
@@ -99,7 +90,11 @@
 
     ===================== */
 
+    var data = bikeArrayClean;
 
+    for ( i = 0; i < dataFiltered.length; i++) {
+        L.marker([dataFiltered[i][1], dataFiltered[i][0]]).addTo(map);
+      }
 
     /* =====================
 
