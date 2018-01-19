@@ -62,10 +62,15 @@
     Start code
 
     ===================== */
+    var array1 = [39.952530, -75.172306, "La Colombe"];
+    var array2 = [39.948521, -75.162367, "Green Eggs Cafe"];
+    var array3 = [39.969694, -75.134658, "Frankford Hall"];
 
-    L.marker([0, 0]).addTo(map);
-    L.marker([0, 0]).addTo(map);
-    L.marker([0, 0]).addTo(map);
+    var restaurantData = [array1, array2, array3];
+
+    for (i = 0; i < 3; i++) {
+        L.marker(restaurantData[i]).bindPopup(restaurantData[i][2]).addTo(map);
+    }
 
     /* =====================
 
