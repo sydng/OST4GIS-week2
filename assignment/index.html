@@ -110,8 +110,21 @@
               } else { }
             }
 
+
+      var myIcon = L.icon({
+          iconUrl: 'http://www.myiconfinder.com/uploads/iconsets/6096188ce806c80cf30dca727fe7c237.png',
+          iconSize: [28, 42],
+          iconAnchor: [22, 94],
+          popupAnchor: [-3, -76],
+      });
+
       for ( i = 0; i < dataFiltered.length; i++) {          // mapping the filtered locations and giving them a pop up
-                L.marker([dataFiltered[i][1], dataFiltered[i][0]]).bindPopup(dataFiltered[i][3]).addTo(map);
+                if (dataFiltered[i][8] != 'N/A' && dataFiltered[i][8] != "N/A ") {
+                  L.marker([dataFiltered[i][1], dataFiltered[i][0]], {icon: myIcon}).bindPopup(dataFiltered[i][3] + ':  '
+                        + dataFiltered[i][8]).addTo(map);
+                } else {
+                  L.marker([dataFiltered[i][1], dataFiltered[i][0]]).bindPopup(dataFiltered[i][3]).addTo(map);
+                }
           }
 
       /* =====================
